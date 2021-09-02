@@ -4,16 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/566ba623ab.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+            #spinner {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+            }
+            /* Safari */
+            @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+            }
+
+            @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+            }
+    </style>
     <title>Book</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-4">
         <input class=" w-75" id="search-field" type="text" placeholder="Search Your Book">
         <button type="button" id="search-btn" class="btn btn-dark">Search</button>
     </div>
-    <div id="divContainer">
+    <!-- result div -->
+    <div class="d-none result text-center fs-2 text-primary">
+        <p>Result found:<span id="result-nummber">0</span></p>
+    </div>
+    <section class="container mt-3">
+        <!-- error -->
+        <div id="error" class="text-center fs-1 text-light bg-danger"></div>
+        <!-- spinner -->
+        <div class="d-none container" id="spinner"></div>
+          <!-- ALL Books -->
+    <div id="divContainer" class="row">
       </div>
+      </section>
+      <div class="ms-5" id="welcome-sms">
+        <h1>Welcome to our website.Search the book of your choice</h1>
+    </div>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="app.js"></script>
 </body>
